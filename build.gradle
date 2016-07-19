@@ -1,0 +1,17 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+
+dependencies {
+	compile "org.seleniumhq.selenium:selenium-java:2.53.1"
+	compile 'org.testng:testng:6.9.6'
+}
+	
+repositories {    
+	mavenCentral()
+}
+test {	
+	useTestNG()
+	testLogging.showStandardStreams = true
+	options.suites("./testng.xml")
+		
+}
